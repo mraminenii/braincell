@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Brain Cell Are You?</title>
+    <link rel="icon" href="smaller_images/neuron_icon.png" type="image/png">
+    <style>
+        @font-face {
+            font-family: 'PixelFont';
+            src: url('Pixelify_Sans/pixel_font.ttf') format('truetype');
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'PixelFont', sans-serif;
+            background: #faf5e2;
+        }
+
+        .container {
+            width: 100vw;
+            height: calc(100vw * (16 / 9));
+            max-height: 150vh;
+            max-width: calc(100vh * (9 / 16));
+            padding: 20px;
+            border-radius: 10px;
+            background: #a6e6b5;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .title {
+            font-size: 21px;
+            margin-bottom: 3vh;
+        }
+
+        .start-button {
+            font-size: 21px;
+            padding: 1vh 2vw;
+            background-color: #f8eab6;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 3vh;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .start-button:hover {
+            background-color: #ddd;
+        }
+
+        .game-container {
+            display: none;
+            margin-top: 10%;
+            overflow: auto;
+        }
+
+        .choices {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .choice-button {
+            font-family: 'PixelFont', sans-serif;
+            font-size: 18px;
+            padding: 1vh 1vw;
+            border: 0.5px solid #f2d79e;
+            background-color: #f6e9bd;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 8px;
+        }
+
+        @media (hover: hover) {
+            .choice-button:hover {
+                background-color: #f3dba7;
+            }
+        }
+
+        .choice-button:focus {
+            background-color: #fff;
+        }
+
+        .story-text {
+            font-size: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .image-container {
+            max-width: 70%;
+            margin: 0 auto;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 100%;
+        }
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Which Brain Cell Are You?</div>
+        <img id="homescreen" style="padding-bottom: 15px" src="smaller_images/homepage_brain.png" alt="Story Image" />
+        <a href="#" class="start-button" onclick="startGame()">Start</a>
+
+        <div class="game-container" id="game-container">
+            <div class="story-text" id="story-text"></div>
+            <div class="image-container">
+                <img id="story-image" src="smaller_images/placeholder.png" alt="Story Image" />
+            </div>
+            <div class="choices" id="choices"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""
+            referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+</body>
+</html>
